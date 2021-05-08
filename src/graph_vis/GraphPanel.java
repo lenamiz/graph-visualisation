@@ -207,7 +207,7 @@ public class GraphPanel extends JPanel {
 
             //arrow, if graph directed
             if (graphTypeDirected == 1) {
-                g2d.drawString("¤", x2-5, y2);
+                g2d.drawString("X", x2-5, y2);
             }
 
             //label
