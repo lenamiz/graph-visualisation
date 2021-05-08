@@ -1,3 +1,8 @@
+/**
+ * graph visualisation tool
+ * @author lenamiz
+ * github.com/lenamiz/
+ */
 package graph_vis;
 
 import javax.swing.*;
@@ -7,6 +12,9 @@ import java.util.LinkedList;
 import java.util.*;
 import javafx.util.Pair;
 
+/**
+ * Class for drawing graph
+ */
 public class GraphPanel extends JPanel {
 
     private static final int height = 1000;
@@ -38,14 +46,21 @@ public class GraphPanel extends JPanel {
         cordsList = new ArrayList<>();
     }
 
-    //random number generator
+    /**
+     * random number generator
+     * @param bound maximum number possible to obtain
+     * @return random number
+     */
     private int getRandomNumber(int bound) {
         Random rnd = new Random();
         int random = rnd.nextInt(bound + 1);    //number from 0 to bound
         return random;
     }
 
-    //drawing
+    /**
+     * drawing graph
+     * @param g graphics
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -139,7 +154,11 @@ public class GraphPanel extends JPanel {
         }
     }
 
-    //checking for collision (if nodes aren't covering each other)
+    /**
+     * checking for collision (if nodes aren't covering each other)
+     * @param p1 node coordinates
+     * @return true if collision detected
+     */
     public boolean collisionDetection(Pair<Integer, Integer> p1) {
         boolean collision = false;
         Pair<Integer, Integer> p2;
@@ -153,7 +172,10 @@ public class GraphPanel extends JPanel {
         return collision;
     }
 
-    //checking if all nodes displayed
+    /**
+     * checking if all nodes displayed
+     * @return true if all nodes displayed
+     */
     public boolean areAllNodesDisplayed(){
         boolean areThey = true;
 
@@ -165,7 +187,12 @@ public class GraphPanel extends JPanel {
         return areThey;
     }
 
-    //edge drawing
+    /**
+     * edge drawing
+     * @param g2d graphics
+     * @param id1 node 1 id
+     * @param id2 node 2 id
+     */
     public void drawEdge(Graphics g2d, int id1, int id2){
 
         g2d.setColor(EDGE_COLOR);
@@ -191,9 +218,13 @@ public class GraphPanel extends JPanel {
         g2d.setColor(NODE_COLOR);
     }
 
-    //deciding on next node's coordinates
-    //takes current node's coords and returns neighbors' coords
-    //direction is a random number from range [0,19]
+    /**
+     * computing next node's coordinates
+     * @param direction random number from range [0,19]
+     * @param dirs current node's coordinates
+     * @return neighbor's coordinates
+     */
+
     public Pair<Integer,Integer> getNextCoordinates(int direction, Pair<Integer,Integer> dirs){
         int x,y;
         int maxDistance = 100;

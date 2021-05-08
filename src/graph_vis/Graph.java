@@ -1,8 +1,16 @@
+/**
+ * graph visualisation tool
+ * @author lenamiz
+ * github.com/lenamiz/
+ */
 package graph_vis;
 
 import javax.swing.*;
 import java.util.*;
 
+/**
+ * Class representing graph
+ */
 abstract class Graph {
 
     protected int totalNodeNum;
@@ -18,6 +26,10 @@ abstract class Graph {
         adjList = new HashMap<>();
     }
 
+    /**
+     * adds new node to the graph
+     * @param nodeVal value of the node
+     */
     public void addNode(String nodeVal) {
         if(totalNodeNum>=20){
             JOptionPane.showMessageDialog(null,"Maximum node number exceeded!");
@@ -33,13 +45,35 @@ abstract class Graph {
         }
     }
 
+    /**
+     *
+     * @param v1 value of node 1
+     * @param v2 value of node 2
+     * @param lbl edge label
+     */
     public abstract void addEdge(String v1, String v2, String lbl);
+
+    /**
+     * gets node degree
+     * @param nodeID id of the node
+     * @return node degree
+     */
     public abstract int getDegree(int nodeID);
 
+    /**
+     * gets node from the graph
+     * @param nodeID id of the node
+     * @return node
+     */
     public Node getNode(int nodeID) {
         return nodeList.get(nodeID);
     }
 
+    /**
+     * gets node id
+     * @param nodeVal value of the node
+     * @return node id
+     */
     public int getNodeID(String nodeVal) {
         int id = -1;
         for (int i = 0; i < nodeList.size(); i++) {
@@ -49,6 +83,11 @@ abstract class Graph {
         return id;
     }
 
+    /**
+     * checks whether node already in the graph
+     * @param nodeVal node value
+     * @return true if node already in the graph
+     */
     public boolean isNodeAlreadyInGraph(String nodeVal) {
         boolean is = false;
 
@@ -61,6 +100,10 @@ abstract class Graph {
         return is;
     }
 
+    /**
+     * gets node with the biggest neighbour count
+     * @return node
+     */
     public int getNodeIDWithMaxNeighbours(){
         int biggest = 0;
         int id = -1;

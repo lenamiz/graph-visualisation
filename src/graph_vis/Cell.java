@@ -1,6 +1,13 @@
+/**
+ * graph visualisation tool
+ * @author lenamiz
+ * github.com/lenamiz/
+ */
 package graph_vis;
 
-
+/**
+ * Cell class is the base of the grid display
+ */
 public class Cell {
 
     private final int i;
@@ -12,7 +19,12 @@ public class Cell {
         this.j = j;
     }
 
-    protected boolean getWall(int x) {     //returns true if cell has a wall in the x direction
+    /**
+     *
+     * @param x direction
+     * @return true if cell has a wall in the x direction
+     */
+    protected boolean getWall(int x) {
         return this.walls[x];
     }
 

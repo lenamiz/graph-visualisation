@@ -1,3 +1,8 @@
+/**
+ * graph visualisation tool
+ * @author lenamiz
+ * github.com/lenamiz/
+ */
 package graph_vis;
 
 import javax.swing.*;
@@ -5,6 +10,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class for graph data input
+ */
 public class DataPanel extends JPanel implements ActionListener{
 
     private final JFrame frame;
@@ -40,7 +48,9 @@ public class DataPanel extends JPanel implements ActionListener{
         createComponents();
     }
 
-    //data input
+    /**
+     * data input
+     */
     public void setData(){
 
         String v1 = v1Field.getText();
@@ -53,7 +63,9 @@ public class DataPanel extends JPanel implements ActionListener{
 
     }
 
-    //creating window components for data input
+    /**
+     * creating window components for data input
+     */
     private void createComponents() {
 
         JLabel v1 = new JLabel("V1");

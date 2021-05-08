@@ -1,3 +1,8 @@
+/**
+ * graph visualisation tool
+ * @author lenamiz
+ * github.com/lenamiz/
+ */
 package graph_vis;
 
 import java.awt.*;
