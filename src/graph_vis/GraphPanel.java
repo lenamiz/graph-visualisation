@@ -35,7 +35,7 @@ public class GraphPanel extends JPanel {
     private static final Color GRID_COLOR = Color.white;
     private static final Color NODE_COLOR = Color.blue;
     private static final Color LABEL_COLOR = Color.black;
-    private static final Color EDGE_COLOR = Color.pink;
+    private static final Color EDGE_COLOR = Color.black;
 
     public GraphPanel(Graph graph, int graphType) {
         this.graph = graph;
